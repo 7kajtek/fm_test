@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/main_activity_list_image_width"
+        android:layout_height="@dimen/main_activity_list_image_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Image" />
+
+    <TextView
+        android:id="@+id/item_title"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/item_line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title asdf asdf asdf adf asdf asdf aas dfasdf asdf ad fadf adf adf " />
+
+    <TextView
+        android:id="@+id/item_date"
+        style="@style/TextAppearance.MaterialComponents.Overline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/item_line"
+        app:layout_constraintTop_toBottomOf="@id/item_title"
+        tools:text="Date" />
+
+    <TextView
+        android:id="@+id/item_description"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/item_line"
+        app:layout_constraintTop_toBottomOf="@id/item_date"
+        tools:text="Description" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/item_line"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:barrierDirection="end"
+        app:layout_constraintStart_toEndOf="@id/item_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
