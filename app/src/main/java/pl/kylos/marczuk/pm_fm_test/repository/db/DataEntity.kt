@@ -9,5 +9,6 @@ data class DataEntity(
     val description: String,
     val imageUrl: String,
     val modificationDate: String,
-    val title: String
+    val title: String,
+    val webUrl: String
 )

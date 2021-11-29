@@ -46,10 +46,19 @@ class Repository(
 
 fun DataNet.toDb() = DataEntity(
     id = orderId,
-    description = description,
+    description = if (description.lastIndexOf("\t") > 0) {
+        description.substring(0, description.lastIndexOf("\t"))
+    } else {
+        ""
+    },
     imageUrl = image_url,
     modificationDate = modificationDate,
-    title = title
+    title = title,
+    webUrl = if (description.lastIndexOf("\t") > 0) {
+        description.substring(description.lastIndexOf("\t") + 1)
+    } else {
+        ""
+    }
 )
 
 fun DataEntity.toData() = Data(
@@ -57,5 +66,6 @@ fun DataEntity.toData() = Data(
     description = description,
     imageUrl = imageUrl,
     modificationDate = modificationDate,
-    title = title
+    title = title,
+    webUrl = webUrl
 )

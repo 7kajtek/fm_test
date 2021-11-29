@@ -10,7 +10,6 @@
         android:id="@+id/item_image"
         android:layout_width="@dimen/main_activity_list_image_width"
         android:layout_height="@dimen/main_activity_list_image_height"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Image" />
@@ -44,8 +43,6 @@
         style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:maxLines="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/item_line"
