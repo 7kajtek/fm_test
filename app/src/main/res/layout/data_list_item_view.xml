@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="20dp">
 
-    <TextView
+    <ImageView
         android:id="@+id/item_image"
         android:layout_width="@dimen/main_activity_list_image_width"
         android:layout_height="@dimen/main_activity_list_image_height"
