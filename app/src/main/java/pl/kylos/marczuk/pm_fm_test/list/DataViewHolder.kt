@@ -17,13 +17,12 @@ class DataViewHolder(parentView: ViewGroup) :
             .inflate(R.layout.data_list_item_view, parentView, false)
     ) {
 
-    fun bind(item: Data) {
+    fun bind(item: Data, listener: DataListAdapter.AdapterOnClick) {
         val dateFormat: DateFormat =
             android.text.format.DateFormat.getDateFormat(itemView.context.applicationContext);
 
         itemView.setOnClickListener {
-            val intent = DetailsActivity.getIntent(itemView.context, item.webUrl)
-            itemView.context.startActivity(intent)
+            listener.onClick(item)
         }
 
         itemView.findViewById<TextView>(R.id.item_title).text = item.title

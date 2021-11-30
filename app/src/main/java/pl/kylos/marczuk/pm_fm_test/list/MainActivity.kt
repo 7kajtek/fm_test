@@ -6,18 +6,36 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pl.kylos.marczuk.pm_fm_test.R
+import pl.kylos.marczuk.pm_fm_test.details.DetailsActivity
+import pl.kylos.marczuk.pm_fm_test.details.DetailsFragment
+import pl.kylos.marczuk.pm_fm_test.repository.Data
 import pl.kylos.marczuk.pm_fm_test.repository.Repository
 
 class MainActivity : AppCompatActivity() {
 
-    private var adapter = DataListAdapter()
+    private var adapter = DataListAdapter(object : DataListAdapter.AdapterOnClick {
+        override fun onClick(item: Data) {
+            val fragmentDetails = findViewById<View>(R.id.fragment_details)
+            if (fragmentDetails == null) {
+                val intent = DetailsActivity.getIntent(this@MainActivity, item.webUrl)
+                this@MainActivity.startActivity(intent)
+            } else {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_details, DetailsFragment.newInstance(item.webUrl))
+                    .commit()
+            }
+        }
+    })
     private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

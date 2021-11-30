@@ -21,7 +21,11 @@ class DetailsActivity : AppCompatActivity() {
             finish()
             return
         }
-        webView.loadUrl(url)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_details, DetailsFragment.newInstance(url))
+            .commit()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true);
     }
