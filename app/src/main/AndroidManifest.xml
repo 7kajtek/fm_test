@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pm_fm_test">
+        android:theme="@style/Theme.Pm_fm_test"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".details.DetailsActivity"
             android:exported="false" />
