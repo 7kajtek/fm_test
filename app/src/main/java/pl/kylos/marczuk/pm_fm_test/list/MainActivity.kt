@@ -1,4 +1,4 @@
-package pl.kylos.marczuk.pm_fm_test
+package pl.kylos.marczuk.pm_fm_test.list
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import pl.kylos.marczuk.pm_fm_test.R
 import pl.kylos.marczuk.pm_fm_test.repository.Repository
 
 class MainActivity : AppCompatActivity() {

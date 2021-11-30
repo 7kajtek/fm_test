@@ -1,4 +1,4 @@
-package pl.kylos.marczuk.pm_fm_test
+package pl.kylos.marczuk.pm_fm_test.list
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil

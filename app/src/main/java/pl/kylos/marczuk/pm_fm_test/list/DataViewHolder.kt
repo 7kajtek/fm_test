@@ -1,4 +1,4 @@
-package pl.kylos.marczuk.pm_fm_test
+package pl.kylos.marczuk.pm_fm_test.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import pl.kylos.marczuk.pm_fm_test.R
+import pl.kylos.marczuk.pm_fm_test.details.DetailsActivity
 import pl.kylos.marczuk.pm_fm_test.repository.Data
 import java.text.DateFormat
 
@@ -18,6 +20,11 @@ class DataViewHolder(parentView: ViewGroup) :
     fun bind(item: Data) {
         val dateFormat: DateFormat =
             android.text.format.DateFormat.getDateFormat(itemView.context.applicationContext);
+
+        itemView.setOnClickListener {
+            val intent = DetailsActivity.getIntent(itemView.context, item.webUrl)
+            itemView.context.startActivity(intent)
+        }
 
         itemView.findViewById<TextView>(R.id.item_title).text = item.title
         itemView.findViewById<TextView>(R.id.item_date).text =
